@@ -27,5 +27,21 @@ public class PersonaRepository {
     public List<Persona> readAll(){
         return personas;
     }
+    public Persona read(int id){
+        for (Persona persona : personas){
+            if (persona.getId()==id){
+                return persona;
+            }
+        }
+        return null;
+    }
+    public Persona read(String rut) {
+        for (Persona persona : personas) {
+            if (persona.getRut().equals(rut)) {
+                return persona;
+            }
+        }
+        return null;
+    }
     
 }
