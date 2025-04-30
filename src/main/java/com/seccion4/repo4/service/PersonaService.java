@@ -1,5 +1,7 @@
 package com.seccion4.repo4.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,5 +15,9 @@ public class PersonaService {
 
     public Persona guardarPersona(Persona persona){
         return personaRepository.create(persona);
+    }
+
+    public List<Persona> listarPersonas(){
+        return personaRepository.readAll();
     }
 }
