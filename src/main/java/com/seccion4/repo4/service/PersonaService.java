@@ -27,5 +27,13 @@ public class PersonaService {
     public Persona buscarxRut(String rut) {
         return personaRepository.read(rut);
     }
-    
+    public Persona modificar(int id, Persona persona)
+    {
+        return personaRepository.update(id, persona);
+    }
+
+    public String borrar(int id) {
+        // TODO Auto-generated method stub
+        return personaRepository.delete(id);
+    }
 }

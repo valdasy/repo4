@@ -43,5 +43,23 @@ public class PersonaRepository {
         }
         return null;
     }
-    
+
+    public Persona update(int id, Persona persona){
+        Persona modi=this.read(id);
+        if(modi!=null){
+            //no va el rut ni el id para evitar errores de inconsistencia de datos
+            modi.setNombre(persona.getNombre());
+            modi.setApellido(persona.getApellido());
+            modi.setEdad(persona.getEdad());
+            return persona;
+        }
+        return null;
+    }
+    public String delete(int id) {
+        if(personas.removeIf(kill->kill.getId()==id)){
+            return "Persona eliminada";
+        }
+        return null;
+    }   
 }
+
